@@ -3,7 +3,9 @@ import requests
 
 app = Flask(__name__)
 
-JUP_BASE = "https://quote-api.jup.ag"
+# try Jupiter CDN fallback (works globally)
+JUP_BASE = "https://quote-api.mainnet-beta.jup.ag"
+
 
 @app.route("/<path:path>", methods=["GET", "POST"])
 def proxy(path):
